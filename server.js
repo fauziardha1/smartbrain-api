@@ -15,6 +15,7 @@ const db= knex({
     }
 })
 const PORT = process.env.PORT || 4000 ;
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const app = express()
 app.use(express.json())
