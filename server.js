@@ -24,7 +24,7 @@ app.get('/',(req,res)=>{
     db.select('*')
         .from('users')
         .then(resp=>res.json(resp))
-        .catch(err=>res.status(400).json("no data!"))
+        .catch(err=>res.status(400).json("error getting data from database"))
 })
 app.post('/signin',signIn.handleSignIn(db,bcrypt))
 app.post('/register',register.handleRegister(db,bcrypt))
