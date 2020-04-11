@@ -10,10 +10,8 @@ const profile = require('./controllers/profile')
 const db= knex({
     client:'pg',
     connection:{
-        host    : 'localhost',
-        user    : 'postgres',
-        password: 'root',
-        database: 'smart-brain'
+        host    : process.env.DATABASE_URL,
+        ssl     : true
     }
 })
 const PORT = process.env.PORT || 4000 ;
