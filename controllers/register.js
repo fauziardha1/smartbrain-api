@@ -3,7 +3,7 @@ const handleRegister = (db,bcrypt)=>(req,res)=>{
     const hash = bcrypt.hashSync(password)
 
     if(!name||!email||!password){
-        return res.status(400).json("unable to register")
+        return res.status(400).json("input should not be empty")
     }
 
     db.transaction(trx=>{
